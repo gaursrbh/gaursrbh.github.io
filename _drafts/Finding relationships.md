@@ -1,9 +1,10 @@
 ---
 layout: post
-title: Data Cleaning - Detecting 1-1 and 1-M relationships
+title: "Data Cleaning - Detecting 1-1 and 1-M relationships"
+published: true
 ---
 
-While I have read and used lots of material around data cleaning – missing data, imputing data, long-to-wide, changing data types – in R, I am yet to come across anything related to ascertaining 1-1 or 1-M relationship between different columns of your tabular data. Is a Member ID unique to each person (in most cases it is)? How about a Family ID? Can a person belong to 2 families? How about a person having two different ages in a dataset spanning a single year (Yes this happens!)?
+While I have read and used lots of material around data cleaning – missing data, imputing data, long-to-wide, changing data types – in R, one more technique which has come handy is **_ascertaining 1-1 or 1-M relationship between different columns_** of your tabular data. Is a Member ID unique to each person (in most cases it is)? How about a Family ID? Can a person belong to 2 families? How about a person having two different ages in a dataset spanning a single year (Yes this happens!)?
 
 One probable reason of not covering this could be that this is mostly domain specific – relationships will be dependent on the area you working in – and hence is expected to be clarified in the data dictionary of your data. However, most data dictionaries do not go beyond data types and field length.
 
