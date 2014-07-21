@@ -148,7 +148,7 @@ claim<-data.frame()
 And below is above wrapped in a function so that it can be applied to entire data. Functions default to checking relationships for all columns, which can be overridden by passing specific column names as a vector. **The function will create a data table copy.**
 ```R
 find.rel < -
-<b>find.rel(iris)</b>
+find.rel(iris)
 #Output
 #Visual Output
 ```
