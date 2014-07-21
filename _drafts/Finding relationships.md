@@ -133,3 +133,23 @@ Of course the root cause of the problem was available (which I missed) in the da
 As I mentioned earlier, these relationships are supposedly domain specific, and established practices, if followed, give you a good idea of what to expect. So you expect 1-1 relationship between Member IDs and Member Names. You might, by experience, might not expect this of Member Address. Multiple addresses are possible like Office and Residence Address.
 
 Format fragmentation, however, is a ubiquitous problem. Different Standard Committees come up with different formats and you are left handling different representations of ~~same~~ similar data.
+
+###R Code
+Here's the code. First up one line code to check relationships in interactive mode.
+```R
+# data.table example
+# data.table[,.N,list(Col1,Col2)][,.N,Col1][N>1]
+# Should Return 0 rows for 1-X Col1-Col2 relationship. Run by changing Col1 to Col2 to check reverse
+# plyr example for data.frame
+# ply()
+# Scenario 1 above
+claim<-data.frame()
+```
+And below is above wrapped in a function so that it can be applied to entire data. Functions default to checking relationships for all columns, which can be overridden by passing specific column names as a vector. **The function will create a data table copy.**
+```R
+find.rel < -
+<b>find.rel(iris)</b>
+#Output
+#Visual Output
+```
+As the function is implemented for data.table, I would like to request clones for data.frame, implemented in plyr, dplyr, etc. Any other comments are also welcome [here](http://saurabhagur.com)
