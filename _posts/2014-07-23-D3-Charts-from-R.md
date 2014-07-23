@@ -1,3 +1,7 @@
+---
+layout: post
+title: Introducing Poole
+---
 Many attempts have already been made to generate D3 charts from R. Most notably [rCharts by Ramnath V](http://rcharts.io). 
 
 Still in trying to hide D3 JS intricacies and provide functions to tinker with all chart attributes, rCharts has set a very high goal for itself and rightly so, as it probably aims to cater to R crowd with little experience in JS.
