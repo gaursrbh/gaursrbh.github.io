@@ -136,6 +136,7 @@ Format fragmentation, however, is a ubiquitous problem. Different Standard Commi
 
 ###R Code
 Here's the code. First up one line code to check relationships in interactive mode.
+{% highlight r %}
 ```R
 # data.table example
 # data.table[,.N,list(Col1,Col2)][,.N,Col1][N>1]
@@ -145,11 +146,31 @@ Here's the code. First up one line code to check relationships in interactive mo
 # Scenario 1 above
 claim<-data.frame()
 ```
+{% endhighlight %}
 And below is above wrapped in a function so that it can be applied to entire data. Functions default to checking relationships for all columns, which can be overridden by passing specific column names as a vector. **The function will create a data table copy.**
+{% highlight r %}
 ```R
-find.rel < -
+find.rel <- function(dt,names=NULL){
+  library(data.table)
+  library(reshape2)
+  if(!is.data.table(dt)){ dt<-data.table(dt) }
+  f1 <- function(col1,col2){
+    cols <- c(col1,col2)
+    nrow(dt[,.N,by=cols][,.N,by=col1][N>1])==0
+  }
+  if(is.null(names)) { names <- names(dt)[sapply(dt, is.factor)] }
+  final <- CJ(col1=names,col2=names)
+  final <- final[final$col1<final$col2]
+  final[,rel1to2:=f1(col1,col2),list(col1,col2)]
+  final[,rel2to1:=f1(col2,col1),list(col2,col1)]
+  final[,relation:=paste(ifelse(rel1to2,"One","Many"),"to",ifelse(rel2to1,"One","Many"))]
+  dcast(final[,list(col1,col2,relation)],col1~col2,value.var="relation")
+}
+
 find.rel(iris)
 #Output
-#Visual Output
+
+#Visual Output - @todo Heat map  ggplot2
 ```
+{% endhighlight %}
 As the function is implemented for data.table, I would like to request clones for data.frame, implemented in plyr, dplyr, etc. Any other comments are also welcome [here](http://saurabhagur.com)
