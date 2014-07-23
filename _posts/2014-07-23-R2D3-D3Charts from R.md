@@ -14,7 +14,8 @@ I am prosposing the following workflow:
 3. Combine your data with the template using whisker. Voila! you have your D3 chart
 
 Here's how it works
-```R
+
+{% highlight r %}
 library(RCurl)
 source_https <- function(url, ...) {
   # parse and evaluate each .R script
@@ -36,7 +37,7 @@ library(whisker)
 #Template prepared beforehand
 template<-getURL("https://raw.githubusercontent.com/gaursrbh/R2D3/master/SunBurst/template.html")
 write(whisker.render(template, params),file="output.html")
-```
+{% endhighlight %}
 
 Welcome your comments on Twitter [@srbhgaur](https://twitter.com/srbhgaur)
 
