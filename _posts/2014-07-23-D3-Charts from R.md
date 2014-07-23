@@ -40,5 +40,6 @@ template<-getURL("https://raw.githubusercontent.com/gaursrbh/R2D3/master/SunBurs
 write(whisker.render(template, params),file="output.html")
 {% endhighlight %}
 
+See output [here] (http://saurabhgaur.com/static/d3/sunburst/output.html)
 Welcome your comments on Twitter [@srbhgaur](https://twitter.com/srbhgaur)
 
