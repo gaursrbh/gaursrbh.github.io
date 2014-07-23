@@ -9,8 +9,11 @@ I believe that in this goal of bridging R and D3, R's role should be data prepar
 The most important aspect is combining the data with D3 and generating charts from R Console. As used in rCharts backend, whisker package is the solution here using moustache templating system.
 
 I am prosposing the following workflow:
+
 1. Prepare your D3 templates. One time activity. Get your hands dirty with D3. Chalk out your layout, axes, etc. Bring in the interactivity - tool tips, zooming, etc.
+
 2. Every time you need to generate the chart, prepare your data in R. Over time, the commands you use could be turned into functions.
+
 3. Combine your data with the template using whisker. Voila! you have your D3 chart
 
 Here's how it works
