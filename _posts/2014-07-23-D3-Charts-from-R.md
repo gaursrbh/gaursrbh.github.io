@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Introducing Poole
+title: D3 Charts from R
 ---
 Many attempts have already been made to generate D3 charts from R. Most notably [rCharts by Ramnath V](http://rcharts.io). 
 
